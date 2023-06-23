@@ -1,0 +1,29 @@
+{% extends "main/base.html" %}
+{% block header %}
+<title>Расшифровка чисел психоматрицы</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <img src="data:image/jpeg;base64,{{ image|safe }}" alt="Психоматрица">
+    <h3>Расшифровка чисел психоматрицы</h3>
+    {% for model in basic_models %}
+    <aside>{{ model.title|safe }}</aside>
+    <p>{{ model.text|safe }}</p>
+    <blockquote>{{ model.advice|safe }}</blockquote>
+    <blockquote>{{ model.recommendation|safe }}</blockquote>
+    {% endfor %}
+
+    <h3>Расшифровка дополнительных чисел психоматрицы</h3>
+    {% for model in additional_models %}
+    <aside>{{ model.title|safe }}</aside>
+    <blockquote>{{ model.annotation|safe }}</blockquote>
+    <blockquote>{{ model.text|safe }}</blockquote>
+    {% endfor %}
+
+    <form action="/">
+        <button type="submit" class="btn btn-primary" style="position: fixed; bottom: 20px; right: 20px; display: block;">
+            Рассчитать другую дату
+        </button>
+    </form>
+</div>
+{% endblock %}

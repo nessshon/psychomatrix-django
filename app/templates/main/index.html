@@ -1,0 +1,50 @@
+{% extends "main/base.html" %}
+{% block header %}
+<title>Квадрат пифагора | Психоматрица</title>
+<script>
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.datepicker');
+            var options = {
+                format: 'yyyy-mm-dd',
+                autoClose: true,
+                i18n: {
+                    cancel: 'Отмена',
+                    clear: 'Очистить',
+                    done: 'Готово',
+                    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+                    weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+                    weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                    weekdaysAbbrev: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С']
+                }
+            };
+            var instances = M.Datepicker.init(elems, options);
+        });
+    }
+</script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center">Квадрат Пифагора</h2>
+            <blockquote class="text-center">
+                Квадрат Пифагора еще называют Картой судьбы или Психоматрицей.
+                Это уникальный метод, который использовался еще египетскими жрецами. Пифагор доработал метод, так что теперь по дате рождения вы можете узнать все о человека.
+            </blockquote>
+            <form action="" method="post" class="form-horizontal">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div>
+                        {{ form.as_p }}
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Рассчитать дату рождения</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

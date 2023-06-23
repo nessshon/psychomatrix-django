@@ -1,6 +1,10 @@
 <h1 align="center">🌐 Psychomatrix "Pythagoras Square" site</h1>
 
-Example: [psychomatrix.ness.su](https://psychomatrix.ness.su)
+Site example: [psychomatrix.ness.su](https://psychomatrix.ness.su)
+Bot example: [@nPsychomatrixBot](https://t.me/nPsychomatrixBot)
+
+The square of Pythagoras is also called the Card of Fate or the Psychomatrix.
+This is a unique method that was used by the Egyptian priests. Pythagoras finalized the method, so now you can find out everything about a person by date of birth.
 
 ### Environment variables reference
 

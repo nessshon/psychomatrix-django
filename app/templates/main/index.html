@@ -2,26 +2,27 @@
 {% block header %}
 <title>Квадрат пифагора | Психоматрица</title>
 <script>
-    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.datepicker');
-            var options = {
-                format: 'yyyy-mm-dd',
-                autoClose: true,
-                i18n: {
-                    cancel: 'Отмена',
-                    clear: 'Очистить',
-                    done: 'Готово',
-                    months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-                    monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-                    weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
-                    weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-                    weekdaysAbbrev: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С']
-                }
-            };
-            var instances = M.Datepicker.init(elems, options);
-        });
-    }
+if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.datepicker');
+        var options = {
+            format: 'yyyy-mm-dd',
+            autoClose: true,
+            yearRange: [1950, 2050], // добавляем ограничение выбора года
+            i18n: {
+                cancel: 'Отмена',
+                clear: 'Очистить',
+                done: 'Готово',
+                months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                monthsShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+                weekdays: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+                weekdaysShort: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+                weekdaysAbbrev: ['В', 'П', 'В', 'С', 'Ч', 'П', 'С']
+            }
+        };
+        var instances = M.Datepicker.init(elems, options);
+    });
+}
 </script>
 {% endblock %}
 {% block content %}
